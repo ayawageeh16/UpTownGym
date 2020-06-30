@@ -20,14 +20,15 @@ public class WorkoutPlan implements Parcelable {
 
     @SerializedName("weekNumber")
     @Expose
-    private String weekNumber;
+    private int weekNumber;
     @SerializedName("workouts")
     @Expose
     private List<Workouts> workouts = null;
 
 
     protected WorkoutPlan(Parcel in) {
-        weekNumber = in.readString();
+        weekNumber = in.readInt();
+        workouts = in.createTypedArrayList(Workouts.CREATOR);
     }
 
     public static final Creator<WorkoutPlan> CREATOR = new Creator<WorkoutPlan>() {
@@ -49,6 +50,7 @@ public class WorkoutPlan implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-        dest.writeString(weekNumber);
+        dest.writeInt(weekNumber);
+        dest.writeTypedList(workouts);
     }
 }

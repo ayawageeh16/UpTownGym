@@ -1,7 +1,7 @@
 
-Š
-java:S1450$"hRemove the "onGoingWorkoutPlanDayTime" field and declare it as a local variable in the relevant methods.(ƒŸí±úÿÿÿÿ8Ô¾¼·­.
-_
-java:S1068$"=Remove this unused "onGoingWorkoutPlanDayTime" private field.(ƒŸí±úÿÿÿÿ8‹ò··­.
 Q
 java:S10665"/Merge this if statement with the enclosing one.(¤ùÄ³üÿÿÿÿ8½ßÂ·­.
+_
+java:S1068$"=Remove this unused "onGoingWorkoutPlanDayTime" private field.(ƒŸí±úÿÿÿÿ8‹ò··­.
+Š
+java:S1450$"hRemove the "onGoingWorkoutPlanDayTime" field and declare it as a local variable in the relevant methods.(ƒŸí±úÿÿÿÿ8Ô¾¼·­.

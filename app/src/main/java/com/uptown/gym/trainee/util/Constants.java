@@ -47,6 +47,7 @@ public final class Constants {
         public static final String WEEK_WORKOUT = "WEEK_WORKOUT";
         public static final String WEEK_WORKOUT_DAYS_LIST = "WEEK_WORKOUT_DAYS_LIST";
         public static final String PLAN_DAY_TIME = "PLAN_DAY_TIME";
+        public static final String IS_ONGOING = "IS_ONGOING";
     }
 
     public abstract static class Exercise {

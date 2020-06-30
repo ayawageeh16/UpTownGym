@@ -29,6 +29,7 @@ public class WorkoutPlanWeekDaysRecyclerViewAdapter extends RecyclerView.Adapter
         this.listener = listener;
     }
 
+
     @NonNull
     @Override
     public WorkoutPlanWeekDaysViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -44,6 +45,7 @@ public class WorkoutPlanWeekDaysRecyclerViewAdapter extends RecyclerView.Adapter
     public void onBindViewHolder(@NonNull WorkoutPlanWeekDaysViewHolder holder, int position) {
         holder.itemWorkoutPlanWeekDayBinding.setWeekDayWorkout(weekWorkoutDays.get(position));
         holder.itemWorkoutPlanWeekDayBinding.setListener(listener);
+
     }
 
 

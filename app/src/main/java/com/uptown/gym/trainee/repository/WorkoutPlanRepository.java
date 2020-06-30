@@ -28,7 +28,7 @@ public class WorkoutPlanRepository {
         }
     }
 
-    public MutableLiveData<MainResponse<List<Workouts>>> findAllWorkouts(long workoutId, String weekNumber) {
+    public MutableLiveData<MainResponse<List<Workouts>>> findAllWorkouts(long workoutId, int weekNumber) {
         MutableLiveData<MainResponse<List<Workouts>>> workoutsResponse = new MutableLiveData<>();
         workoutPlanClient.findAllWorkouts(workoutId, weekNumber)
                 .enqueue(new ApiResponse(new ApiResponseListener<MainResponse<List<Workouts>>>() {

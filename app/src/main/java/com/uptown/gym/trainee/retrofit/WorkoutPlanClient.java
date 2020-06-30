@@ -59,7 +59,7 @@ public interface WorkoutPlanClient {
     Call<WorkoutPlans> findAllWorkoutPlansNames();
 
     @GET("api/v1/workout-plans/{workoutPlanId}/workouts")
-    Call<List<Workouts>> findAllWorkouts(@Path("workoutPlanId") long workoutId, @Query("weekNumber") String weekNumber);
+    Call<List<Workouts>> findAllWorkouts(@Path("workoutPlanId") long workoutId, @Query("weekNumber") int weekNumber);
 
 
     /**

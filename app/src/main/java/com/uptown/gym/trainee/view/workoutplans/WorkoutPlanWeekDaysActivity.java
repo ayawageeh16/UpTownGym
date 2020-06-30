@@ -76,14 +76,14 @@ public class WorkoutPlanWeekDaysActivity extends BaseActivity implements Workout
             currentWorkout = intent.getParcelableExtra(WORKOUT_PLAN_WEEK);
             currentWorkoutPlan = intent.getParcelableExtra(WORKOUT_PLAN);
             currentWorkoutPlanDays = intent.getParcelableArrayListExtra(WORKOUT_PLAN_WEEK_LIST);
-            setupActionBar(currentWorkout.getWeekNumber());
+            setActionBar(currentWorkout.getWeekNumber());
         } else if (intent.hasExtra(ON_GOING_WORKOUT_PLAN)) {
             onGoingWorkoutPlan = intent.getParcelableExtra(ON_GOING_WORKOUT_PLAN);
             currentWorkoutPlan = onGoingWorkoutPlan.getWorkoutPlan();
             workoutPlan = intent.getParcelableExtra(WEEK_WORKOUT);
             currentWorkout = workoutPlan;
             currentWorkoutPlanDays = intent.getParcelableArrayListExtra(WEEK_WORKOUT_DAYS_LIST);
-            setupActionBar(workoutPlan.getWeekNumber());
+            setActionBar(workoutPlan.getWeekNumber());
             isFromOnGoingWorkoutPlan = true;
         }
         setUpRecyclerViewAdapter();
@@ -92,6 +92,10 @@ public class WorkoutPlanWeekDaysActivity extends BaseActivity implements Workout
             isSwipeRefresh = true;
             findAllWorkoutPlanDays();
         });
+    }
+
+    private void setActionBar(int weekNumber) {
+        setupActionBar(getString(R.string.week) + " " + weekNumber);
     }
 
     private void stopSwipeLayout() {

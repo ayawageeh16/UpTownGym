@@ -27,6 +27,7 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.GridLayoutManager;
 
+import static com.uptown.gym.trainee.util.Constants.OnGoingWorkoutPlan.IS_ONGOING;
 import static com.uptown.gym.trainee.util.Constants.OnGoingWorkoutPlan.ONGOING_WORKOUT_PLAN;
 import static com.uptown.gym.trainee.util.Constants.OnGoingWorkoutPlan.ON_GOING_WORKOUT_PLAN;
 import static com.uptown.gym.trainee.util.Constants.OnGoingWorkoutPlan.WEEK_WORKOUT;

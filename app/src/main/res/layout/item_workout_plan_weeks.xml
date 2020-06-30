@@ -43,7 +43,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:gravity="center"
-                android:text="@{workoutPlan.weekNumber}"
+                android:text="@{@string/week + ` `+ workoutPlan.weekNumber}"
                 android:textColor="@color/colorPrimary"
                 tools:text="@string/weeks" />
 

@@ -30,7 +30,7 @@ public class WorkoutPlanViewModel extends AndroidViewModel {
         return workoutPlanRepository.findAllWorkoutPlansRequest();
     }
 
-    public MutableLiveData<MainResponse<List<Workouts>>> findAllWorkouts(long workoutId, String weekNumber) {
+    public MutableLiveData<MainResponse<List<Workouts>>> findAllWorkouts(long workoutId, int weekNumber) {
         return workoutPlanRepository.findAllWorkouts(workoutId, weekNumber);
     }
 
