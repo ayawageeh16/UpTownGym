@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/home_menu"
+            android:icon="@drawable/ic_menu_home"
+            android:title="@string/home" />
+
+        <item
+            android:id="@+id/ongoing_menu"
+            android:icon="@drawable/ic_calender_class"
+            android:title="@string/ongoing_workout_plans" />
+
+        <item
+            android:id="@+id/profile_menu"
+            android:icon="@drawable/ic_menu_profile"
+            android:title="@string/profile" />
+
+    </group>
+
+    <item android:title="@string/title_menu_item_help_and_settings">
+        <menu>
+            <item
+                android:id="@+id/nav_sign_out"
+                android:icon="@drawable/ic_menu_sign_out"
+                android:title="@string/menu_sign_out" />
+        </menu>
+    </item>
+
+</menu>
+

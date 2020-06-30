@@ -1,0 +1,15 @@
+
+@
+java:S5411m"*Use the primitive boolean expression here.(Ãí£‚
+E
+java:S5411t"*Use the primitive boolean expression here.(»âõÏûÿÿÿÿ
+F
+java:S5411‡"*Use the primitive boolean expression here.(×÷Ã‡ıÿÿÿÿ
+m
+java:S3776f"RRefactor this method to reduce its Cognitive Complexity from 19 to the 15 allowed.(Ñ‰€ÿÿÿÿÿ
+Z
+java:S3358m"DExtract this nested ternary operation into an independent statement.(Ãí£‚
+_
+java:S3358t"DExtract this nested ternary operation into an independent statement.(»âõÏûÿÿÿÿ
+`
+java:S3358‡"DExtract this nested ternary operation into an independent statement.(×÷Ã‡ıÿÿÿÿ

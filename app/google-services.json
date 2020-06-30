@@ -1,0 +1,130 @@
+{
+  "project_info": {
+    "project_number": "868183376580",
+    "firebase_url": "https://uptown-gym-trainer.firebaseio.com",
+    "project_id": "uptown-gym-trainer",
+    "storage_bucket": "uptown-gym-trainer.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:868183376580:android:eac0aa66fe0f5b06f27f91",
+        "android_client_info": {
+          "package_name": "com.uptown.gym.trainee"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "868183376580-kg0f146jv6bp0u28qf5jq4sreif6js1i.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.uptown.gym.trainee",
+            "certificate_hash": "94f5faa37cc857f0cd94430555aa1449f9f589b5"
+          }
+        },
+        {
+          "client_id": "868183376580-t6u0ommagqjhd6cv2k83t7cmfdje9r1d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyABoDZXZ0ZH9iospLKnK7Mtz5BfBKRGrqk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "868183376580-t6u0ommagqjhd6cv2k83t7cmfdje9r1d.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:868183376580:android:19d10e32c2fedf45f27f91",
+        "android_client_info": {
+          "package_name": "com.wageeh.uptown.reception"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "868183376580-br1billpio6k2og080rmcgqgo5qhgr33.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.wageeh.uptown.reception",
+            "certificate_hash": "45a54bedd3e2d456f5582c98b0ac65b548704457"
+          }
+        },
+        {
+          "client_id": "868183376580-jsn6i60f578up5p0bri0utgsbr24elm5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.wageeh.uptown.reception",
+            "certificate_hash": "94f5faa37cc857f0cd94430555aa1449f9f589b5"
+          }
+        },
+        {
+          "client_id": "868183376580-t6u0ommagqjhd6cv2k83t7cmfdje9r1d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyABoDZXZ0ZH9iospLKnK7Mtz5BfBKRGrqk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "868183376580-t6u0ommagqjhd6cv2k83t7cmfdje9r1d.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:868183376580:android:406a46d281ec24d1f27f91",
+        "android_client_info": {
+          "package_name": "com.wageeh.uptowngymtrainer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "868183376580-299a9lerb0oo9v6644dflamb1r0kgv4r.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.wageeh.uptowngymtrainer",
+            "certificate_hash": "94f5faa37cc857f0cd94430555aa1449f9f589b5"
+          }
+        },
+        {
+          "client_id": "868183376580-t6u0ommagqjhd6cv2k83t7cmfdje9r1d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyABoDZXZ0ZH9iospLKnK7Mtz5BfBKRGrqk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "868183376580-t6u0ommagqjhd6cv2k83t7cmfdje9r1d.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

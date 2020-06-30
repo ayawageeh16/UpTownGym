@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="listener"
+            type="com.uptown.gym.trainee.listener.WorkoutPlansListener.WorkoutPlanWeekDayListener" />
+
+        <variable
+            name="weekDayWorkout"
+            type="com.uptown.gym.trainee.model.workoutplan.Workouts" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/active_program_day_hour_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/cat_card_double_spacing"
+        android:layout_marginTop="@dimen/material_card_spacing"
+        android:layout_marginRight="@dimen/cat_card_double_spacing"
+        android:clickable="true"
+        android:onClick="@{() -> listener.onWeekDayCardClicked(weekDayWorkout)}"
+        android:focusable="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/calender_img"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_centerVertical="true"
+                android:tint="@color/colorPrimary"
+                android:layout_margin="16dp"
+                app:srcCompat="@drawable/ic_calender_class"/>
+
+            <View
+                android:id="@+id/view"
+                android:layout_width="2dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginEnd="4dp"
+                android:layout_marginRight="4dp"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/calender_img"
+                android:background="@color/colorPrimary" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:layout_toRightOf="@id/view"
+                android:orientation="vertical">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/workout_plan_week_day_name_text_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginRight="16dp"
+                    android:padding="8dp"
+                    android:text="@{weekDayWorkout.dayOfWeek}"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+                    android:textStyle="bold"
+                    tools:text="Day 1"
+                    tools:textColor="@color/color_white" />
+
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/workout_plan_day_workout_text_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
+                   android:textColor="@color/secondaryText"
+                    android:textStyle="bold"
+                    android:text="@{weekDayWorkout.name}"
+                    tools:text="Metabolic workout" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </RelativeLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+</layout>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- DARK COLOR THEME -->
+    <!-- The same color values are defined for dark theme, but with values more appropriate for -->
+    <!-- low-luminance UIs. These colors will be used by night/themes.xml. -->
+
+    <color name="colorPrimary">#E57373</color>
+    <color name="colorPrimaryDark">#000000</color>
+    <color name="colorPrimaryVariant">#D32F2F</color>
+    <color name="colorSecondary">#F3C87A</color>
+    <color name="colorSecondaryVariant">#B1914C</color>
+    <color name="colorAccent">#2196F3</color>
+
+    <color name="colorBackground">#202125</color>
+    <color name="colorSurface">#121212</color>
+    <color name="colorError">#CF6679</color>
+
+    <color name="colorOnPrimary">#000000</color>
+    <color name="colorOnSecondary">#000000</color>
+    <color name="colorOnBackground">#FFFFFF</color>
+    <color name="colorOnSurface">#FFFFFF</color>
+    <color name="colorOnError">#000000</color>
+
+    <color name="drawable_tint">#B71C1C</color>
+    <color name="dark_white">#F9F3F3</color>
+
+    <color name="mySnackbarBackgroundColor">#202125</color>
+</resources>

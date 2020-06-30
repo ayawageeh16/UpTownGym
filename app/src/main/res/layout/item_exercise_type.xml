@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="exerciseType"
+            type="String" />
+
+    </data>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/exercise_type_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:text="@{exerciseType}"
+            android:textColor="#808080"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            tools:text="Exercise Type" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/nested_exercises_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/exercise_type_text_view"
+            android:orientation="vertical"
+            tools:listitem="@layout/item_workout_plan_exercise" />
+
+        <View
+            android:id="@+id/activityMainDivider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/nested_exercises_recycler_view"
+            android:layout_marginBottom="5dp"
+            android:background="#31C7C7CC" />
+
+    </RelativeLayout>
+
+</layout>

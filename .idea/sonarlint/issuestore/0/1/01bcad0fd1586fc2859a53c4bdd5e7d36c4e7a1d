@@ -1,0 +1,7 @@
+
+k
+java:S1128"IRemove this unused import 'com.uptown.gym.trainee.model.trainee.Trainee'.(·€€Ãýÿÿÿÿ8Óž•¹­.
+P
+java:S1068"4Remove this unused "ADD_FITNESS_TEST" private field.(þÒ¸68”üý¸­.
+w
+java:S3008"[Rename this field "ADD_FITNESS_TEST" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(þÒ¸68ÍÐÕ¸­.

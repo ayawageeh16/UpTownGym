@@ -1,0 +1,231 @@
+<resources>
+    <string name="app_name">Uptown Gym</string>
+    <string name="trainer_name">Username</string>
+    <string name="trainer_phone">Phone Number</string>
+    <string name="login">Login</string>
+    <string name="do_not_have_account">Don\'t have an account?</string>
+    <string name="sign_up">Sign up</string>
+    <string name="already_have_account">Already have an account?</string>
+    <string name="title_menu_item_help_and_settings">Help &amp; Settings</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="trainer_password">Password</string>
+    <string name="trainer_confirm_password">Confirm Password</string>
+
+    <string name="error_required">required</string>
+    <string name="error_not_String">enter name contains letters only</string>
+    <string name="error_not_phone_number">Enter valid phone number</string>
+    <string name="offline_message">You are offline</string>
+    <string name="failed">Connection Error!</string>
+    <string name="error_password_does_not_match">Password doesn\'t match</string>
+    <string name="trainer_first_name">First name</string>
+    <string name="trainer_last_name">Last name</string>
+    <string name="error_not_valid_userName">Please enter Username that contains: letters (upper or
+        lowercase) numbers (0-9) underscore (_) dash (-) point (.) no spaces! or other characters
+    </string>
+    <string name="username_already_exist">This username already exists!</string>
+    <string name="no_connection">You are offline</string>
+    <string name="inbody">InBody</string>
+    <string name="fitnessTest">Fitness Test</string>
+    <string name="add">Add</string>
+    <string name="somethingWrong">The connection to the server timed out!</string>
+    <string name="workout">Workout</string>
+    <string name="menu_sign_out">Sign out</string>
+    <string name="error_username_or_password">Error Username or Password</string>
+    <string name="exercise_description">Description</string>
+    <string name="exercise_name">Name*</string>
+    <string name="exercise_type">Exercise Type</string>
+    <string name="rest">Rest</string>
+    <string name="no_exercises">No Exercises Founded!</string>
+    <string name="no_workouts">No Workouts Founded!</string>
+    <string name="choose_gender">Gender</string>
+    <string name="choose_time">Choose Time</string>
+    <string name="height">Height:</string>
+    <string name="total_weight">Total Weight</string>
+    <string name="muscle_mass">Muscle Mass</string>
+    <string name="fat_weight">Fat Weight</string>
+    <string name="fat_percentage">Fat Percentage</string>
+    <string name="body_score">Body Score</string>
+    <string name="Weight_control">Weight Control</string>
+    <string name="fat_control">Fat Control</string>
+    <string name="muscle_control">Muscle Control</string>
+    <string name="target_weight">Target Weight</string>
+    <string name="weight_control">Weight Control</string>
+    <string name="research_parameters">Research Parameters</string>
+    <string name="waist_hip_ratio">Waist Hip Ratio</string>
+    <string name="obesity_degree">Obesity Degree</string>
+    <string name="basal_metabolic_rate">Basal Metabolic Rate</string>
+    <string name="visceral_fat_level">Visceral Fat Level</string>
+    <string name="edit">Edit</string>
+    <string name="score_stability_strength">Core Stability Strength</string>
+    <string name="flexibility">Flexibility</string>
+    <string name="strength">Strength</string>
+    <string name="medical_history_and_injuries">Medical History And Injuries</string>
+    <string name="cardiovasscular_efficiency">Cardiovasscular Efficiency</string>
+    <string name="create_workout">Create workout</string>
+    <string name="Workout_name">Workout name</string>
+    <string name="Update_Workout">Update Workout</string>
+
+    <string name="deleted">Deleted</string>
+    <string name="no_classes">No Classes Yet!</string>
+
+    <string name="default_notification_channel_id" translatable="false">fcm_default_channel</string>
+    <!-- This is the name that users will see when interacting with this channel.
+                It should describe the category of notifications that will be sent through this channel -->
+    <!-- [START fcm_default_icon_string] -->
+    <string name="default_notification_channel_name" translatable="true">Weather</string>
+    <string name="msg_subscribed">Subscribed to new trainee topic</string>
+    <string name="msg_subscribe_failed">Failed to subscribe to new trainee topic</string>
+    <string name="new_trainee_topic_name">new-trainee</string>
+
+
+    <string name="channel_name">New Trainee Notification Channel</string>
+    <string name="channel_description">New Trainee Notification Channel</string>
+
+    <string name="delete">Delete</string>
+    <string name="no_programs">No ongoing workout plans Founded!</string>
+    <string name="choose_start_date">Start Date</string>
+    <string name="no_new_clients">No New Clients Founded!</string>
+    <string name="enter_phone_number">Enter phone number</string>
+    <string name="no_trainees">No trainees founded!</string>
+    <string name="added">Added</string>
+    <string name="not_allowed">Not Allowd</string>
+    <string name="saved">Saved</string>
+    <string name="error">Connection Error</string>
+    <string name="exercise_training_system">Training system</string>
+    <string name="workout_created_successfully">Workout Created Successfully</string>
+    <string name="workout_edited_successfully">Workout Edited Successfully</string>
+    <string name="connection_to_the_server_time_out">Connection to the server times out</string>
+
+
+    <string name="choose_theme_label">Choose theme</string>
+    <string name="choose_theme_light">Light</string>
+    <string name="choose_theme_dark">Dark</string>
+    <string name="choose_theme_default">System default</string>
+    <string name="exercises">Exercises</string>
+    <string name="exercise_deleted_successfully">Exercise deleted successfully</string>
+    <string name="name">Name</string>
+    <string name="description">Description</string>
+    <string name="duration">Duration</string>
+
+    <string name="phone_number_text_field_prefix" translatable="false">+20</string>
+    <string name="program_category">Program Category</string>
+    <string name="fitness_level">Fitness Level</string>
+    <string name="program_added_successfully">Program Added Successfully</string>
+    <string name="program_edited_successfully">Program edited successfully</string>
+    <string name="workout_plans">Workout plans</string>
+    <string name="gender">Gender: </string>
+    <string name="please_select_gender">Please select gender</string>
+    <string name="set_rounds">Set/Rounds</string>
+    <string name="reps_duration">Reps/Duration</string>
+    <string name="months">Months</string>
+    <string name="weeks"> Weeks</string>
+    <string name="month">Month</string>
+    <string name="space"> </string>
+    <string name="score">Score</string>
+    <string name="comment">Comment</string>
+    <string name="comment_colon">Comment :</string>
+    <string name="score_colon">Score :</string>
+    <string name="please_select_fitness_test_type">Please Select Fitness Test</string>
+    <string name="updated_successfully">Updated successfully</string>
+    <string name="new_trainees">New Trainees</string>
+    <string name="ongoing_workout_plans">Ongoing workout plans</string>
+    <string name="choose_program">Program</string>
+    <string name="choose_target">Target</string>
+    <string name="please_select_program">Please Select Program</string>
+    <string name="please_select_target">Please Select Target</string>
+    <string name="active_program_added_successfully">Active program is added successfully</string>
+    <string name="day_of_week">Day of week</string>
+    <string name="please_select_day_of_week">Please select day of week</string>
+    <string name="please_select_workout">Please select workout</string>
+    <string name="select_exercise">Select Exercise</string>
+    <string name="select_workout">Select Workout</string>
+    <string name="please_select_exercise">Please Select Exercise</string>
+    <string name="please_select_exercise_type">Please Select Exercise Type</string>
+    <string name="program_workout_exercise_added_successfully">Program Workout Exercise Added
+        Successfully
+    </string>
+    <string name="from">From</string>
+    <string name="to">To</string>
+    <string name="program_deleted_successfully">Program Deleted Successfully</string>
+    <string name="no_days">No Days Founded</string>
+    <string name="day_added_successfully">Day added successfully</string>
+    <string name="please_select_hour">Please Select Hour</string>
+    <string name="trainee">Trainee</string>
+    <string name="program">Program</string>
+    <string name="assign_this_active_program_to_trainee">Assign this active program to the
+        trainee?
+    </string>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="class_deleted_successfully">Class is deleted successfully</string>
+    <string name="evaluation">Evaluation</string>
+    <string name="exercise_evaluation">Score</string>
+    <string name="trainee_evaluated_successfully">Trainee evaluated successfully</string>
+    <string name="choose_fitness_test_type">Choose fitness test type</string>
+    <string name="profile">Profile</string>
+    <string name="age">Age</string>
+    <string name="start_date">Start Date</string>
+    <string name="end_date">End Date</string>
+    <string name="package_type">Package Type</string>
+    <string name="slogan">Real Fitness Society</string>
+    <string name="please_select_duration">Please select duration</string>
+    <string name="please_select_category">Please select category</string>
+    <string name="workout_added_successfully">Workout added successfully</string>
+    <string name="trainee_enrolled_successfullty">You enrolled successfully</string>
+    <string name="fourty_five_mins">45 mins</string>
+    <string name="colon"> : </string>
+
+    <string name="warming_up">Warming up</string>
+    <string name="core">Core</string>
+    <string name="cooling_down">Cooling down</string>
+    <string name="wod">Wod</string>
+    <string name="this_user_name_doesnt_exist">This username does not exists!</string>
+    <string name="this_trainee_membership_not_valid">This trainee membership not valid</string>
+    <string name="sets">Sets</string>
+    <string name="reps">Reps</string>
+    <string name="this_trainee_not_registered_in_this_program">This trainee not enrolled in this program!</string>
+    <string name="workout_deleted_successfully">Workout deleted successfully</string>
+    <string name="exercise_number_of_sets">Sets</string>
+    <string name="exercise_number_of_reps">Reps</string>
+    <string name="active_program_edited_successfully">Active program edited successfully</string>
+    <string name="no_calender">This workout plan doesn\'t have calender yet!</string>
+    <string name="submit">Submit</string>
+    <string name="start_design">Start design</string>
+    <string name="workout_plan_details_activity_title">Workout Plan Details</string>
+    <string name="design_workout_activity_title">"Design workout "</string>
+    <string name="add_exercise">Add exercise</string>
+    <string name="upload">Upload</string>
+    <string name="select_Gif">Select GIF</string>
+    <string name="add_exercise_photo">Upload exercise photo</string>
+    <string name="dialog_permission_title">Grant Permissions</string>
+    <string name="dialog_permission_message">This app needs permission to use this feature. You can grant them in app settings.</string>
+    <string name="go_to_settings">GOTO SETTINGS</string>
+    <string name="upload_selected_image">Upload selected Image?</string>
+    <string name="uploading">Uploading ...</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="days"> days</string>
+    <string name="category">Category</string>
+    <string name="no_appointments">No appointments founded!</string>
+    <string name="home">Home</string>
+    <string name="weight">Weight:</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="no_workout_plans">"No workout plans founded! "</string>
+    <string name="fitness_session_enroll_dialog_body1">Do you want to enroll to this fitness session?</string>
+    <string name="fitness_session_enroll_dialog_body2">"Please note that by enrolling to this session you can't unenroll"</string>
+    <string name="enroll">Enroll</string>
+    <string name="more">More</string>
+    <string name="fitness_session_workout">Fitness session workout</string>
+    <string name="cardiac_efficiency">Cardiac efficiency</string>
+    <string name="core_stability">Core stability</string>
+    <string name="medical_history">Medical history</string>
+    <string name="fitnessTests">Fitness tests</string>
+    <string name="no_fitness_tests">No fitness tests founded</string>
+    <string name="no_inbodies">No inbodies founded!</string>
+    <string name="inbodies">Inbodies</string>
+    <string name="you_enrolled_before">You enrolled in this fitness session before</string>
+</resources>

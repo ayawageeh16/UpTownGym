@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout>
+
+    <data>
+
+        <variable
+            name="listener"
+            type="com.uptown.gym.trainee.listener.CustomAlertDialogListener" />
+
+    </data>
+
+    <androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:text="@string/fitness_session_enroll_dialog_body1"
+            android:textSize="24sp"
+            tools:textColor="@color/color_white" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:text="@string/fitness_session_enroll_dialog_body2"
+            android:textSize="16sp"
+            tools:textColor="@color/color_white" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</layout>

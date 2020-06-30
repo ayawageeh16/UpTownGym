@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="com.uptown.gym.trainee.util.Utils" />
+
+        <variable
+            name="onGoingPlanDayTime"
+            type="com.uptown.gym.trainee.model.ongoingworkoutplan.OnGoingWorkoutPlanDayTime" />
+
+        <variable
+            name="listener"
+            type="com.uptown.gym.trainee.listener.OnGoingWorkoutPlanListener.OnGoingWorkoutPlanDayAppointmentListener" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/active_program_day_hour_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/cat_card_double_spacing"
+        android:layout_marginTop="@dimen/material_card_spacing"
+        android:layout_marginRight="@dimen/cat_card_double_spacing"
+        android:onClick="@{() -> listener.onOnGoingWorkoutPlanDayAppointmentClicked(onGoingPlanDayTime)}"
+        android:clickable="true"
+        android:focusable="true">
+
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/appointment_icon"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_centerVertical="true"
+                android:layout_margin="16dp"
+                app:srcCompat="@drawable/ic_wait" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/active_program_day_hour_time_text_view"
+                style="@style/TextAppearance.MaterialComponents.Headline6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@id/appointment_icon"
+                android:layout_toRightOf="@id/appointment_icon"
+                android:text="@{Utils.convertLongTimeToString(onGoingPlanDayTime.dayTime)}"
+                android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                android:textColor="@color/color_white"
+                android:textStyle="bold"
+                tools:text="8:30 am" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/enroll_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center"
+                android:layout_margin="16dp"
+                android:background="@android:color/transparent"
+                app:backgroundTint="@android:color/transparent"
+                android:onClick="@{() -> listener.onEnrollInAppointmentClicked(onGoingPlanDayTime)}"
+                android:text="@string/enroll"
+                android:textAllCaps="false"
+                android:textColor="@color/colorPrimary"
+                app:strokeColor="@color/colorPrimary"
+
+                app:strokeWidth="2dp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/next_button"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center"
+                android:layout_margin="16dp"
+                android:background="@drawable/ic_next"
+                android:visibility="invisible" />
+
+        </RelativeLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+</layout>

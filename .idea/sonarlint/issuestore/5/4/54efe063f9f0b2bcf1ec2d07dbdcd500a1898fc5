@@ -1,0 +1,11 @@
+
+|
+java:S14500"ZRemove the "workoutPlan" field and declare it as a local variable in the relevant methods.(Û¿žûýÿÿÿÿ8Þ‚¼Ê®.
+‚
+java:S1450+"eRemove the "currentWorkoutPlanDays" field and declare it as a local variable in the relevant methods.(þíòŽ8œ‹¾Ê®.
+M
+java:S10683"+Remove this unused "planDay" private field.(ëäž¸úÿÿÿÿ8Þ‚¼Ê®.
+W
+java:S1068+":Remove this unused "currentWorkoutPlanDays" private field.(þíòŽ8œ‹¾Ê®.
+G
+java:S10685"*Remove this unused "isEdit" private field.(¢‘«·8Þ‚¼Ê®.

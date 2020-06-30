@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="inbody"
+            type="com.uptown.gym.trainee.model.inbody.InBody" />
+
+        <variable
+            name="listener"
+            type="com.uptown.gym.trainee.listener.TraineeListener.InBodiesListener" />
+
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/inbody_image"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_margin="16dp"
+                app:srcCompat="@drawable/ic_inbody" />
+
+            <TextView
+                android:id="@+id/inbody_history"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_toEndOf="@id/inbody_image"
+                android:layout_toRightOf="@id/inbody_image"
+                android:gravity="center"
+                tools:text="4 feb 2020"
+                tools:textColor="@color/color_white" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/inbody_next"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_centerInParent="true"
+                android:layout_margin="16dp"
+                android:background="@drawable/ic_next"
+                android:onClick="@{() -> listener.onInBodyClicked(inbody)}" />
+
+        </RelativeLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</layout>

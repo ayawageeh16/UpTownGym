@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".view.trainees.TraineeProfileActivity">
+
+    <data>
+
+        <variable
+            name="trainee"
+            type="com.uptown.gym.trainee.model.trainee.Trainee" />
+
+        <variable
+            name="listener"
+            type="com.uptown.gym.trainee.listener.TraineeListener.TraineeProfileListener" />
+
+        <variable
+            name="dateUtils"
+            type="com.uptown.gym.trainee.util.Utils" />
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/app_bar_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.appbar.CollapsingToolbarLayout
+                android:id="@+id/collapsing"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#202125"
+                android:fitsSystemWindows="true"
+                app:contentScrim="?attr/colorPrimaryDark"
+                app:expandedTitleTextAppearance="@android:color/transparent"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/workout_plan_img"
+                    android:layout_width="match_parent"
+                    android:layout_height="220dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/build_muscle"
+                    app:layout_collapseMode="parallax" />
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="bottom|center"
+                    app:layout_anchor="@id/app_bar_layout"
+                    app:layout_anchorGravity="bottom|center">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="100dp"
+                            app:srcCompat="@drawable/ic_person" />
+
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:background="@drawable/dark_rounded_header"
+                            android:orientation="vertical"
+                            android:padding="16dp">
+
+                            <com.google.android.material.textview.MaterialTextView
+                                style="@style/TextAppearance.AppCompat.Headline"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginBottom="16dp"
+                                android:text="@{trainee != null ? trainee.firstName + ` ` + trainee.lastName : ` `}"
+                                android:textStyle="bold"
+                                tools:text="Aya Wageeh"
+                                tools:textColor="@color/color_white" />
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="16dp"
+                                android:orientation="horizontal">
+
+                                <com.google.android.material.textview.MaterialTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:drawableStart="@drawable/ic_birthday"
+                                    android:drawableLeft="@drawable/ic_birthday"
+                                    android:drawablePadding="8dp"
+                                    android:gravity="center"
+                                    android:text="@string/age"
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                                    tools:textColor="@color/color_white" />
+
+                                <com.google.android.material.textview.MaterialTextView
+                                    android:id="@+id/profile_trainee_age"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginStart="4dp"
+                                    android:layout_marginLeft="4dp"
+                                    android:layout_marginEnd="16dp"
+                                    android:layout_marginRight="16dp"
+                                    android:drawablePadding="8dp"
+                                    android:gravity="center"
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                                    tools:text="30 years"
+                                    tools:textColor="@color/color_white" />
+
+                                <com.google.android.material.textview.MaterialTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginEnd="4dp"
+                                    android:layout_marginRight="4dp"
+                                    android:layout_weight="1"
+                                    android:drawableStart="@drawable/ic_gender"
+                                    android:drawableLeft="@drawable/ic_gender"
+                                    android:drawablePadding="8dp"
+                                    android:gravity="center"
+                                    android:text="@string/gender"
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                                    tools:textColor="@color/color_white" />
+
+                                <com.google.android.material.textview.MaterialTextView
+                                    android:id="@+id/profile_trainee_gender"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_weight="1"
+                                    android:drawablePadding="8dp"
+                                    android:gravity="center"
+                                    android:text="@{trainee.gender}"
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                                    tools:text="Female"
+                                    tools:textColor="@color/color_white" />
+
+                            </LinearLayout>
+
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+            </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp">
+                <!-- FitnessTest And InBody -->
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginRight="16dp">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/profile_trainee_fitness_test_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:onClick="@{() -> listener.onFitnessTestClicked()}"
+                        android:layout_marginBottom="8dp">
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/profile_trainee_fitness_test"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="16dp"
+                            android:drawableStart="@drawable/ic_fitness_test"
+                            android:drawableLeft="@drawable/ic_fitness_test"
+                            android:drawablePadding="8dp"
+                            android:gravity="center"
+                            android:text="@string/fitnessTest"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                            tools:textColor="@color/color_white" />
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/profile_trainee_inbody_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:onClick="@{() -> listener.onInBodyClicked()}"
+                        android:layout_below="@id/profile_trainee_fitness_test_layout">
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/profile_trainee_inbody"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="16dp"
+                            android:drawableStart="@drawable/ic_inbody"
+                            android:drawableLeft="@drawable/ic_inbody"
+                            android:drawablePadding="8dp"
+                            android:gravity="center"
+                            android:text="@string/inbody"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                            tools:textColor="@color/color_white" />
+                    </com.google.android.material.card.MaterialCardView>
+
+                </RelativeLayout>
+
+                <ProgressBar
+                    android:id="@+id/trainee_profile_progress_bar"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_centerInParent="true"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="16dp"
+                    android:indeterminate="true"
+                    android:indeterminateTint="@color/colorPrimary"
+                    android:indeterminateTintMode="src_atop"
+                    android:visibility="invisible" />
+
+            </RelativeLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>

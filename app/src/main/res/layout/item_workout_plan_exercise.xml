@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout>
+
+    <data>
+
+        <variable
+            name="exercise"
+            type="com.uptown.gym.trainee.model.exercise.Exercise" />
+
+        <variable
+            name="listener"
+            type="com.uptown.gym.trainee.listener.ExerciseListener.ExercisesInterfaceListener" />
+
+    </data>
+
+    <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/exercise_card_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/cat_card_double_spacing"
+        android:layout_marginTop="@dimen/material_card_spacing"
+        android:layout_marginRight="@dimen/cat_card_double_spacing"
+        android:clickable="true"
+        android:focusable="true"
+        android:onClick="@{() -> listener.onExerciseCardClicked(exercise)}">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="@dimen/card_content_padding">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/exercise_image_view"
+                addImageToView="@{exercise.imageUrl}"
+                placeholder="@drawable/ic_exercise_ic"
+                app:srcCompat="@drawable/ic_exercise_ic"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:scaleType="fitXY"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginEnd="4dp"
+                android:layout_marginRight="4dp" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/exercise_image_view"
+                android:layout_toRightOf="@+id/exercise_image_view"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/exercise_name_text_view"
+                    style="?attr/textAppearanceHeadline5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/cat_card_double_spacing"
+                    android:layout_marginLeft="@dimen/cat_card_double_spacing"
+                    android:layout_marginEnd="@dimen/cat_card_double_spacing"
+                    android:layout_marginRight="@dimen/cat_card_double_spacing"
+                    android:ellipsize="end"
+                    android:gravity="start"
+                    android:maxLines="1"
+                    android:text="@{exercise.name}"
+                    tools:text="Exercise name" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/exercise_description_text_view"
+                    style="?attr/textAppearanceBody2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/exercise_name_text_view"
+                    android:layout_marginStart="@dimen/cat_card_double_spacing"
+                    android:layout_marginLeft="@dimen/cat_card_double_spacing"
+                    android:layout_marginTop="@dimen/cat_card_single_spacing"
+                    android:layout_marginEnd="@dimen/cat_card_double_spacing"
+                    android:layout_marginRight="@dimen/cat_card_double_spacing"
+                    android:layout_toStartOf="@+id/exercise_card_menu"
+                    android:layout_toLeftOf="@+id/exercise_card_menu"
+                    android:layout_toEndOf="@id/exercise_image_view"
+                    android:layout_toRightOf="@+id/exercise_image_view"
+                    android:ellipsize="end"
+                    android:gravity="start"
+                    android:maxLines="2"
+                    android:text="@{exercise.description}"
+                    tools:text="Secondary line text Lorem ipsum dolor sit amet, nec no nominavi scaevola. Per et sint sapientem, nobis perpetua salutandi mei te." />
+
+                <!-- Sets And Reps Layout -->
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/sets_and_reps_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/cat_card_double_spacing"
+                    android:layout_marginLeft="@dimen/cat_card_double_spacing"
+                    android:layout_marginTop="8dp"
+                    android:baselineAligned="false"
+                    android:orientation="horizontal"
+                    android:padding="4dp"
+                    android:visibility="gone"
+                    android:weightSum="2">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="16dp"
+                        android:layout_marginRight="16dp"
+                        android:layout_marginBottom="4dp"
+                        android:layout_weight="1">
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/exercise_number_of_sets" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/exercise_card_sets"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="8dp"
+                            android:maxLines="1"
+                            android:text="@{String.valueOf(exercise.sets)}"
+                            android:textSize="14sp"
+                            tools:text="30" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="4dp"
+                        android:layout_weight="1">
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/exercise_number_of_reps" />
+
+                        <TextView
+                            android:id="@+id/exercise_card_reps"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="8dp"
+                            android:layout_marginRight="8dp"
+                            android:text="@{String.valueOf(exercise.reps)}"
+                            tools:text="12 x 5" />
+
+                    </LinearLayout>
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <!-- Seconds And Duration Layout -->
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/duration_and_sec_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/cat_card_double_spacing"
+                    android:layout_marginLeft="@dimen/cat_card_double_spacing"
+                    android:layout_marginTop="8dp"
+                    android:orientation="horizontal"
+                    android:padding="4dp"
+                    android:visibility="gone"
+                    android:weightSum="2">
+
+
+                    <TextView
+                        android:id="@+id/exercise_card_duration"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginRight="8dp"
+                        android:drawableStart="@drawable/ic_timer"
+                        android:drawableLeft="@drawable/ic_timer"
+                        android:drawablePadding="8dp"
+                        android:maxLines="1"
+                        android:text="@{String.valueOf(exercise.sets)}"
+                        android:textSize="14sp"
+                        tools:text="30 Sec" />
+
+                    <TextView
+                        android:id="@+id/exercise_card_round"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginRight="8dp"
+                        android:drawableStart="@drawable/ic_round"
+                        android:drawableLeft="@drawable/ic_round"
+                        android:drawablePadding="8dp"
+                        android:text="@{String.valueOf(exercise.reps)}"
+                        android:textSize="14sp"
+                        tools:text="4" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <!-- Sets And rounds Layout -->
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/sets_or_rounds_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/cat_card_double_spacing"
+                    android:layout_marginLeft="@dimen/cat_card_double_spacing"
+                    android:layout_marginTop="8dp"
+                    android:baselineAligned="false"
+                    android:orientation="vertical"
+                    android:visibility="gone"
+                    android:weightSum="2">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="16dp"
+                        android:layout_marginRight="16dp"
+                        android:layout_marginBottom="4dp"
+                        android:layout_weight="1">
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/set_rounds" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/exercise_card_sets_or_rounds"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="8dp"
+                            android:maxLines="1"
+                            android:text="@{String.valueOf(exercise.sets)}"
+                            android:textSize="14sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="4dp"
+                        android:layout_weight="1">
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/reps_duration" />
+
+                        <TextView
+                            android:id="@+id/exercise_card_reps_or_duration"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="8dp"
+                            android:layout_marginRight="8dp"
+                            android:text="@{String.valueOf(exercise.reps)}"
+                            tools:text="12 x 5" />
+
+                    </LinearLayout>
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <!-- Rest Layout -->
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/rest_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_marginStart="@dimen/cat_card_double_spacing"
+                    android:layout_marginLeft="@dimen/cat_card_double_spacing"
+                    android:layout_marginBottom="4dp"
+                    android:layout_weight="1"
+                    android:visibility="gone">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/rest"
+                        android:textColor="@color/color_gray"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/exercise_card_rest"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="8dp"
+                        android:text="@{String.valueOf(exercise.rest)}"
+                        android:textSize="14sp"
+                        tools:text="4 sec" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </RelativeLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+</layout>
+
