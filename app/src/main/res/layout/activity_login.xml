@@ -34,7 +34,7 @@
                 android:layout_marginBottom="48dp"
                 android:contentDescription="@string/app_name"
                 android:scaleType="fitXY"
-                android:src="@drawable/logo" />
+                android:src="@drawable/logo_uptown" />
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/trainee_name_login_edit_text"

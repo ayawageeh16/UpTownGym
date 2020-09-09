@@ -90,8 +90,12 @@ public class WorkoutPlanExercisesRecyclerViewAdapter extends RecyclerView.Adapte
         void bind(Exercise exercise) {
 
             // Check if description not empty
-            if (!exercise.getDescription().isEmpty()) {
-                itemWorkoutPlanExerciseBinding.exerciseDescriptionTextView.setVisibility(View.VISIBLE);
+            if(exercise.getDescription() != null){
+                if (!exercise.getDescription().isEmpty()) {
+                    itemWorkoutPlanExerciseBinding.exerciseDescriptionTextView.setVisibility(View.VISIBLE);
+                }
+            }else {
+                itemWorkoutPlanExerciseBinding.exerciseDescriptionTextView.setVisibility(View.GONE);
             }
 
             // Check if it's class Exercise
