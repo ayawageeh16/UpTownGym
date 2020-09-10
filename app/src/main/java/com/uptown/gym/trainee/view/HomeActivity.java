@@ -40,7 +40,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
         if (savedInstanceState == null) {
             changeFragment(new WorkoutPlansFragment(), getString(R.string.workout_plans));
-            dataBinding.navView.setCheckedItem(R.id.home);
+            dataBinding.navView.setCheckedItem(R.id.home_menu);
         }
 
         setUserName();
@@ -95,7 +95,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         switch (menuItem.getItemId()) {
             case R.id.home_menu: {
                 changeFragment(new WorkoutPlansFragment(), getString(R.string.workout_plans));
-                dataBinding.navView.setCheckedItem(R.id.home);
+                dataBinding.navView.setCheckedItem(R.id.home_menu);
             }
             break;
             case R.id.ongoing_menu: {
@@ -106,6 +106,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
             case R.id.profile_menu: {
                 Intent intent = new Intent(this, ProfileActivity.class);
                 startActivity(intent);
+                dataBinding.navView.setCheckedItem(R.id.profile_menu);
             }
             break;
             case R.id.nav_sign_out: {
