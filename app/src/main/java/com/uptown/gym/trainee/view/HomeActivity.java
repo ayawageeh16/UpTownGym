@@ -13,7 +13,6 @@ import com.uptown.gym.trainee.util.Constants;
 import com.uptown.gym.trainee.view.ongoingworkoutplans.OnGoingWorkoutPlansFragment;
 import com.uptown.gym.trainee.view.profile.ProfileActivity;
 import com.uptown.gym.trainee.view.registeration.LoginActivity;
-import com.uptown.gym.trainee.view.workoutplans.WorkoutPlansFragment;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -39,8 +38,8 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         setUpDrawerLayout();
 
         if (savedInstanceState == null) {
-            changeFragment(new WorkoutPlansFragment(), getString(R.string.workout_plans));
-            dataBinding.navView.setCheckedItem(R.id.home_menu);
+            changeFragment(new OnGoingWorkoutPlansFragment(), getString(R.string.ongoing_workout_plans));
+            dataBinding.navView.setCheckedItem(R.id.ongoing_menu);
         }
 
         setUserName();
@@ -49,6 +48,8 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
     @Override
     protected void onResume() {
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+        dataBinding.navView.setCheckedItem(R.id.ongoing_menu);
+
         super.onResume();
     }
 
@@ -93,11 +94,6 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
         switch (menuItem.getItemId()) {
-            case R.id.home_menu: {
-                changeFragment(new WorkoutPlansFragment(), getString(R.string.workout_plans));
-                dataBinding.navView.setCheckedItem(R.id.home_menu);
-            }
-            break;
             case R.id.ongoing_menu: {
                 changeFragment(new OnGoingWorkoutPlansFragment(), getString(R.string.ongoing_workout_plans));
                 dataBinding.navView.setCheckedItem(R.id.ongoing_menu);

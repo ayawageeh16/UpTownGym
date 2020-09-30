@@ -134,6 +134,8 @@ public class OngoingWorkoutPlanDetailsActivity extends BaseActivity implements W
                         } else {
                             ViewUtils.showToast(OngoingWorkoutPlanDetailsActivity.this, onGoingWorkoutPlanMainResponse.getMessage(), Toast.LENGTH_SHORT);
                         }
+                    }else{
+                        ViewUtils.showToast(OngoingWorkoutPlanDetailsActivity.this, onGoingWorkoutPlanMainResponse.getMessage(), Toast.LENGTH_SHORT);
                     }
                 }
             });

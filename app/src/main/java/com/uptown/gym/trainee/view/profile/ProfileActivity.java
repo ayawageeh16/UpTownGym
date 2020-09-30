@@ -52,10 +52,13 @@ public class ProfileActivity extends BaseActivity implements TraineeListener.Tra
             onRequestStart(dataBinding.traineeProfileProgressBar);
             traineeViewModel.findTraineeById(userId).observe(this, traineeMainResponse -> {
                 onRequestEnd(dataBinding.traineeProfileProgressBar);
-                if (traineeMainResponse.getStatusCode() == 200) {
-                    dataBinding.setTrainee(traineeMainResponse.getResponse());
-                    dataBinding.profileTraineeAge.setText(String.valueOf(traineeMainResponse.getResponse().getAge()));
-
+                if (traineeMainResponse.getResponse() != null) {
+                    if (traineeMainResponse.getStatusCode() == 200) {
+                        dataBinding.setTrainee(traineeMainResponse.getResponse());
+                        dataBinding.profileTraineeAge.setText(String.valueOf(traineeMainResponse.getResponse().getAge()));
+                    } else {
+                        ViewUtils.showToast(ProfileActivity.this, traineeMainResponse.getMessage(), Toast.LENGTH_LONG);
+                    }
                 } else {
                     ViewUtils.showToast(ProfileActivity.this, traineeMainResponse.getMessage(), Toast.LENGTH_LONG);
                 }

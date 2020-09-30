@@ -125,7 +125,7 @@ public class WorkoutPlanDetailsActivity extends BaseActivity implements WorkoutP
                     public void onChanged(MainResponse<WorkoutPlanResponse> workoutPlanResponseMainResponse) {
                         dataBinding.workoutPlanDetails.workoutPlanWeeksProgressBar.setVisibility(View.GONE);
                         stopSwipeLayout();
-                        if (workoutPlanResponseMainResponse != null) {
+                        if (workoutPlanResponseMainResponse.getResponse() != null) {
                             if (workoutPlanResponseMainResponse.getStatusCode() == 200) {
                                 dataBinding.workoutPlanDetails.workoutPlanWeeksRecyclerview.setVisibility(View.VISIBLE);
                                 dataBinding.setWorkoutPlan(workoutPlanResponseMainResponse.getResponse());

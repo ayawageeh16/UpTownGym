@@ -48,7 +48,7 @@ public class FitnessTestsActivity extends BaseActivity implements TraineeListene
 
         Intent intent = getIntent();
         if (intent.hasExtra(Constants.Trainee.TRAINEE)) {
-            userId = intent.getLongExtra(Constants.Trainee.TRAINEE,0);
+            userId = intent.getLongExtra(Constants.Trainee.TRAINEE, 0);
             findAllFitnessTests();
         }
 
@@ -89,10 +89,12 @@ public class FitnessTestsActivity extends BaseActivity implements TraineeListene
             viewModel.findALLFitnessTests(userId).observe(this, fitnessTestsResponseMainResponse -> {
                 onRequestEnd(dataBinding.fitnessTestsProgressBar);
                 stopSwipeLayout();
-                if (fitnessTestsResponseMainResponse.getStatusCode() == 200) {
-                    adapter.setFitnessTests(fitnessTestsResponseMainResponse.getResponse().getContent());
-                    dataBinding.fragmentNoFitnessTestsLayout.setVisibility(View.INVISIBLE);
-                    dataBinding.fitnessTestsRecyclerview.setVisibility(View.VISIBLE);
+                if (fitnessTestsResponseMainResponse.getResponse() != null) {
+                    if (fitnessTestsResponseMainResponse.getStatusCode() == 200) {
+                        adapter.setFitnessTests(fitnessTestsResponseMainResponse.getResponse().getContent());
+                        dataBinding.fragmentNoFitnessTestsLayout.setVisibility(View.INVISIBLE);
+                        dataBinding.fitnessTestsRecyclerview.setVisibility(View.VISIBLE);
+                    }
                 } else if (fitnessTestsResponseMainResponse.getStatusCode() == 204) {
                     dataBinding.fragmentNoFitnessTestsLayout.setVisibility(View.VISIBLE);
                     dataBinding.fitnessTestsRecyclerview.setVisibility(View.INVISIBLE);

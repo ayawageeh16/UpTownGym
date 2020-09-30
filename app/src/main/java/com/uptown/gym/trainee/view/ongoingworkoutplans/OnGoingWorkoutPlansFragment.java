@@ -81,7 +81,7 @@ public class OnGoingWorkoutPlansFragment extends Fragment implements OnGoingWork
         findAllOnGoingWorkoutPlansRequest();
     }
 
-    private void stopSwipeLayout()       {
+    private void stopSwipeLayout() {
         final Handler handler = new Handler();
         handler.postDelayed(() -> {
             if (dataBinding.womenOngoingWorkoutPlansSwipeRefresh.isRefreshing()) {
@@ -104,14 +104,18 @@ public class OnGoingWorkoutPlansFragment extends Fragment implements OnGoingWork
                 onGoingWorkoutPlanViewModel.findAllOnGoingWorkoutPlansByGender(traineeId).observe(getViewLifecycleOwner(), onGoingWorkoutPlansResponseMainResponse -> {
                     dataBinding.fragmentWomenOngoingWorkoutPlansProgressBar.setVisibility(View.INVISIBLE);
                     stopSwipeLayout();
-                    if (onGoingWorkoutPlansResponseMainResponse.getStatusCode() == 200) {
-                        dataBinding.noWomenOngoingWorkoutPlansLayout.setVisibility(View.INVISIBLE);
-                        dataBinding.fragmentWomenOngoingWorkoutPlansRecyclerView.setVisibility(View.VISIBLE);
-                        ongoingWorkoutPlans = onGoingWorkoutPlansResponseMainResponse.getResponse().getOnGoingWorkoutPlans();
-                        adapter.setOngoingWorkoutPlans(ongoingWorkoutPlans);
-                    } else if (onGoingWorkoutPlansResponseMainResponse.getStatusCode() == 204) {
-                        dataBinding.fragmentWomenOngoingWorkoutPlansRecyclerView.setVisibility(View.INVISIBLE);
-                        dataBinding.noWomenOngoingWorkoutPlansLayout.setVisibility(View.VISIBLE);
+                    if (onGoingWorkoutPlansResponseMainResponse.getResponse() != null) {
+                        if (onGoingWorkoutPlansResponseMainResponse.getStatusCode() == 200) {
+                            dataBinding.noWomenOngoingWorkoutPlansLayout.setVisibility(View.INVISIBLE);
+                            dataBinding.fragmentWomenOngoingWorkoutPlansRecyclerView.setVisibility(View.VISIBLE);
+                            ongoingWorkoutPlans = onGoingWorkoutPlansResponseMainResponse.getResponse().getOnGoingWorkoutPlans();
+                            adapter.setOngoingWorkoutPlans(ongoingWorkoutPlans);
+                        } else if (onGoingWorkoutPlansResponseMainResponse.getStatusCode() == 204) {
+                            dataBinding.fragmentWomenOngoingWorkoutPlansRecyclerView.setVisibility(View.INVISIBLE);
+                            dataBinding.noWomenOngoingWorkoutPlansLayout.setVisibility(View.VISIBLE);
+                        } else {
+                            ViewUtils.showToast(getContext(), onGoingWorkoutPlansResponseMainResponse.getMessage(), Toast.LENGTH_SHORT);
+                        }
                     } else {
                         ViewUtils.showToast(getContext(), onGoingWorkoutPlansResponseMainResponse.getMessage(), Toast.LENGTH_SHORT);
                     }

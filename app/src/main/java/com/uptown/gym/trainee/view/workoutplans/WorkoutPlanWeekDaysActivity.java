@@ -126,9 +126,14 @@ public class WorkoutPlanWeekDaysActivity extends BaseActivity implements Workout
             workoutPlanViewModel.findAllWorkouts(currentWorkoutPlan.getId(), currentWorkout.getWeekNumber()).observe(this, listMainResponse -> {
                 dataBinding.fragmentWorkoutPlansWeekDaysProgressBar.setVisibility(View.INVISIBLE);
                 stopSwipeLayout();
-                if (listMainResponse.getStatusCode() == 200) {
-                    adapter.setWeekWorkoutDays(listMainResponse.getResponse());
+                if(listMainResponse.getResponse() != null){
+                    if (listMainResponse.getStatusCode() == 200) {
+                        adapter.setWeekWorkoutDays(listMainResponse.getResponse());
+                    }
+                }else{
+                    ViewUtils.showToast(this, listMainResponse.getMessage(), Toast.LENGTH_LONG);
                 }
+
             });
         } else {
             ViewUtils.showToast(this, getString(R.string.offline_message), Toast.LENGTH_SHORT);

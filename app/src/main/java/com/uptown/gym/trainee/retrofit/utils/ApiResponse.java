@@ -37,23 +37,26 @@ public class ApiResponse<ResponseType> implements Callback<ResponseType> {
                 mainResponse.setResponse(null);
                 listener.onSuccess((ResponseType) mainResponse);
             }
-
         } else {
             // Parse Retrofit Error body
             if (response.errorBody() != null) {
                 ErrorResponse errorResponse = new Gson().fromJson(response.errorBody().charStream(), ErrorResponse.class);
                 MainResponse<ResponseType> mainResponse = new MainResponse<>();
                 if (errorResponse != null) {
-                    if (errorResponse.getMessage() != null) {
+                    if (errorResponse.getMessage() != null){
                         mainResponse.setMessage(errorResponse.getMessage());
-                        mainResponse.setStatusCode(errorResponse.getStatus());
                     }
                 } else {
                     mainResponse.setMessage("Connection Error");
-                    mainResponse.setStatusCode(0);
                 }
-                listener.onSuccess((ResponseType) mainResponse);
+
+                if (errorResponse != null) {
+                    mainResponse.setStatusCode(errorResponse.getStatus());
+                    listener.onSuccess((ResponseType) mainResponse);
+                }
+
             }
+
         }
     }
 

@@ -23,10 +23,6 @@ public class OnGoingWorkoutPlanViewModel extends AndroidViewModel {
         onGoingWorkoutPlanRepository = new OnGoingWorkoutPlanRepository();
     }
 
-    public MutableLiveData<Boolean> createOnGoingWorkoutPlan(long workoutPlanId, OnGoingWorkoutPlan ongoingWorkoutPlan) {
-        return onGoingWorkoutPlanRepository.createOnGoingWorkoutPlan(workoutPlanId, ongoingWorkoutPlan);
-    }
-
     public MutableLiveData<MainResponse<OnGoingWorkoutPlansResponse>> findAllOnGoingWorkoutPlansByGender(long userId) {
         return onGoingWorkoutPlanRepository.findAllOnGoingWorkoutPlansByGender(userId);
     }
@@ -43,17 +39,6 @@ public class OnGoingWorkoutPlanViewModel extends AndroidViewModel {
         return onGoingWorkoutPlanRepository.findOnGoingWorkoutPlanById(workoutPlanId, ongoingWorkoutPlanId);
     }
 
-    public MutableLiveData<Boolean> updateOnGoingWorkoutPlan(long workoutPlanId, long onGoingWorkoutPlanId, OnGoingWorkoutPlan ongoingWorkoutPlan) {
-        return onGoingWorkoutPlanRepository.updateOnGoingWorkoutPlan(workoutPlanId, onGoingWorkoutPlanId, ongoingWorkoutPlan);
-    }
-
-    public MutableLiveData<Boolean> deleteOnGoingWorkoutPlan(long workoutPlanId, long onGoingWorkoutPlanId) {
-        return onGoingWorkoutPlanRepository.deleteOnGoingWorkoutPlan(workoutPlanId, onGoingWorkoutPlanId);
-    }
-
-    public MutableLiveData<MainResponse<OnGoingWorkoutPlanDayTime>> createOnGoingWorkoutPlanDayTime(long workoutPlanId, long ongoingWorkoutPlanId, OnGoingWorkoutPlanDayTime onGoingWorkoutPlanDayTime) {
-        return onGoingWorkoutPlanRepository.createOnGoingWorkoutPlanDayTime(workoutPlanId, ongoingWorkoutPlanId, onGoingWorkoutPlanDayTime);
-    }
 
     public MutableLiveData<MainResponse<OnGoingWorkoutPlanDayTimesResponse>> findAllOnGoingWorkoutPlanDayTime(long workoutPlanId, long ongoingWorkoutPlanId, long workoutId) {
         return onGoingWorkoutPlanRepository.findAllOnGoingWorkoutPlanDayTime(workoutPlanId, ongoingWorkoutPlanId, workoutId);

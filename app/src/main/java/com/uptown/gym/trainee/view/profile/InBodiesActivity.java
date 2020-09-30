@@ -66,10 +66,12 @@ public class InBodiesActivity extends BaseActivity implements TraineeListener.In
     private void findAllInBodies() {
         if (NetworkConnection.isConnected(this)) {
             traineeViewModel.findAllInbodies(userId).observe(this, inBodiesMainResponse -> {
-                if (inBodiesMainResponse.getStatusCode() == 200) {
-                    adapter.setInBodies(inBodiesMainResponse.getResponse().getInBodyModels());
-                    dataBinding.fragmentNoInbodiesLayout.setVisibility(View.INVISIBLE);
-                    dataBinding.inbodiesRecyclerview.setVisibility(View.VISIBLE);
+                if (inBodiesMainResponse.getResponse() != null) {
+                    if (inBodiesMainResponse.getStatusCode() == 200) {
+                        adapter.setInBodies(inBodiesMainResponse.getResponse().getInBodyModels());
+                        dataBinding.fragmentNoInbodiesLayout.setVisibility(View.INVISIBLE);
+                        dataBinding.inbodiesRecyclerview.setVisibility(View.VISIBLE);
+                    }
                 } else if (inBodiesMainResponse.getStatusCode() == 204) {
                     dataBinding.fragmentNoInbodiesLayout.setVisibility(View.VISIBLE);
                     dataBinding.inbodiesRecyclerview.setVisibility(View.INVISIBLE);

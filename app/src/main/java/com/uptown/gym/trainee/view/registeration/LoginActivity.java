@@ -135,18 +135,17 @@ public class LoginActivity extends AppCompatActivity implements LoginListener {
             loginViewModel.login(trainer).observe(this, trainerDTO -> {
                 dataBinding.loginProgressBar.setVisibility(View.INVISIBLE);
                 ViewUtils.enableUI(this);
-                if (trainerDTO != null) {
-                    if (trainerDTO.getTrainer() != null) {
-                        // Save User Info In SharedPreferences
-                        saveUserInfoInSharedPreferences(trainerDTO.getTrainer().getId(), username, trainerDTO.getTrainer().getGender());
-                        Intent startHomeActivity = new Intent(LoginActivity.this, HomeActivity.class);
-                        startActivity(startHomeActivity);
-                        clearData();
-                        finish();
-                    }
+                if (trainerDTO.getResponse() != null) {
+                    // Save User Info In SharedPreferences
+                    saveUserInfoInSharedPreferences(trainerDTO.getResponse().getId(), username, trainerDTO.getResponse().getGender());
+                    Intent startHomeActivity = new Intent(LoginActivity.this, HomeActivity.class);
+                    startActivity(startHomeActivity);
+                    clearData();
+                    finish();
+
                 } else {
                     dataBinding.loginProgressBar.setVisibility(View.INVISIBLE);
-                    ViewUtils.showToast(this, getString(R.string.this_user_name_doesnt_exist), Toast.LENGTH_SHORT);
+                    ViewUtils.showToast(this, trainerDTO.getMessage(), Toast.LENGTH_SHORT);
                 }
             });
         } else {

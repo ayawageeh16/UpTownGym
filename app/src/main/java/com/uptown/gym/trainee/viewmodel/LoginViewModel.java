@@ -2,8 +2,10 @@ package com.uptown.gym.trainee.viewmodel;
 
 import android.app.Application;
 
+import com.uptown.gym.trainee.model.base.MainResponse;
 import com.uptown.gym.trainee.model.trainer.TrainerDTO;
 import com.uptown.gym.trainee.model.trainer.TrainerLoginDTO;
+import com.uptown.gym.trainee.model.trainer.User;
 import com.uptown.gym.trainee.repository.LoginRepository;
 
 import androidx.annotation.NonNull;
@@ -18,7 +20,7 @@ public class LoginViewModel extends AndroidViewModel {
         loginRepository = new LoginRepository(application);
     }
 
-    public MutableLiveData<TrainerDTO> login(TrainerLoginDTO trainer) {
+    public MutableLiveData<MainResponse<User>> login(TrainerLoginDTO trainer) {
         return loginRepository.login(trainer);
     }
 }

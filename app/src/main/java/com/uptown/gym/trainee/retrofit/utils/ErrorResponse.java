@@ -19,7 +19,7 @@ public class ErrorResponse {
     @SerializedName("error")
     @Expose
     private String error;
-    @SerializedName("messages")
+    @SerializedName("message")
     @Expose
     private String message = null;
 }
