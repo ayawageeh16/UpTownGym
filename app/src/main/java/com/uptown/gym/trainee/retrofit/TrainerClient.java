@@ -9,9 +9,6 @@ import retrofit2.http.POST;
 
 public interface TrainerClient {
 
-    @POST("api/v1/users")
-    Call<User> signUp(@Body User trainer);
-
     @POST("api/v1/users/login")
     Call<User> login(@Body TrainerLoginDTO trainer);
 

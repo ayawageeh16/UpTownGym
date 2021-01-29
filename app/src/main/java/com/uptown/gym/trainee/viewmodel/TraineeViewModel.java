@@ -32,19 +32,8 @@ public class TraineeViewModel extends AndroidViewModel {
         return traineeRepository.findAllFitnessTests(traineeId);
     }
 
-    public MutableLiveData<MainResponse<FitnessTest>> findFitnessTestById(long traineeId, long fitnessTestId) {
-        return traineeRepository.findFitnessTestById(traineeId, fitnessTestId);
-    }
-
-    public MutableLiveData<InBody> findInBodyById(long traineeId, long inBodyId) {
-        return traineeRepository.findInBodyById(traineeId, inBodyId);
-    }
-
     public MutableLiveData<MainResponse<InBodies>> findAllInbodies(long traineeId) {
         return traineeRepository.findAllInBody(traineeId);
     }
 
-    public MutableLiveData<Boolean> enrollTraineeToProgram(long activeWorkoutPlanId, long traineeId) {
-        return traineeRepository.enrollTraineeToProgram(activeWorkoutPlanId, traineeId);
-    }
 }

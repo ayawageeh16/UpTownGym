@@ -26,17 +26,8 @@ public class WorkoutPlanViewModel extends AndroidViewModel {
         workoutPlanRepository = new WorkoutPlanRepository();
     }
 
-    public MutableLiveData<MainResponse<List<WorkoutPlansResponse>>> findAllWorkoutPlans() {
-        return workoutPlanRepository.findAllWorkoutPlansRequest();
-    }
-
     public MutableLiveData<MainResponse<List<Workouts>>> findAllWorkouts(long workoutId, int weekNumber) {
         return workoutPlanRepository.findAllWorkouts(workoutId, weekNumber);
-    }
-
-
-    public MutableLiveData<MainResponse<List<WorkoutPlansResponse>>> findAllWorkoutPlansByCategory(String category) {
-        return workoutPlanRepository.findAllWorkoutPlansByCategory(category);
     }
 
     public MutableLiveData<MainResponse<WorkoutPlanResponse>> findWorkoutPlanById(long workoutPlanId) {
@@ -49,7 +40,6 @@ public class WorkoutPlanViewModel extends AndroidViewModel {
 
 
     // OnGoing WorkoutPlan FitnessSession
-
 
     public MutableLiveData<MainResponse<FitnessSessionResponse>> createFitnessSession(long ongoingWorkoutPlanId,
                                                                                       long ongoingWorkoutPlanDayTimeId,

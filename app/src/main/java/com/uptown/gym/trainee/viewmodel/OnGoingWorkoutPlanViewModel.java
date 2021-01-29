@@ -27,18 +27,9 @@ public class OnGoingWorkoutPlanViewModel extends AndroidViewModel {
         return onGoingWorkoutPlanRepository.findAllOnGoingWorkoutPlansByGender(userId);
     }
 
-    public MutableLiveData<MainResponse<OnGoingWorkoutPlansResponse>> findActiveProgramsByTarget(String target) {
-        return onGoingWorkoutPlanRepository.findAllOnGoingWorkoutPlansByTarget(target);
-    }
-
-    public MutableLiveData<MainResponse<OnGoingWorkoutPlansResponse>> findActiveProgramsByTargetAndGender(String gender, String target) {
-        return onGoingWorkoutPlanRepository.findAllOnGoingWorkoutPlansByGenderAndTarget(gender, target);
-    }
-
     public MutableLiveData<MainResponse<OnGoingWorkoutPlan>> findOnGoingWorkoutPlanById(long workoutPlanId, long ongoingWorkoutPlanId) {
         return onGoingWorkoutPlanRepository.findOnGoingWorkoutPlanById(workoutPlanId, ongoingWorkoutPlanId);
     }
-
 
     public MutableLiveData<MainResponse<OnGoingWorkoutPlanDayTimesResponse>> findAllOnGoingWorkoutPlanDayTime(long workoutPlanId, long ongoingWorkoutPlanId, long workoutId) {
         return onGoingWorkoutPlanRepository.findAllOnGoingWorkoutPlanDayTime(workoutPlanId, ongoingWorkoutPlanId, workoutId);

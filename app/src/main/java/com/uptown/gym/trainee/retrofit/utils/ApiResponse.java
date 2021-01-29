@@ -3,6 +3,7 @@ package com.uptown.gym.trainee.retrofit.utils;
 import android.util.Log;
 
 import com.google.gson.Gson;
+import com.google.gson.JsonSyntaxException;
 import com.uptown.gym.trainee.model.base.MainResponse;
 
 import org.jetbrains.annotations.NotNull;
@@ -24,7 +25,6 @@ public class ApiResponse<ResponseType> implements Callback<ResponseType> {
 
     @Override
     public void onResponse(@NotNull Call<ResponseType> call, Response<ResponseType> response) {
-
         if (response.isSuccessful()) {
             if (response.body() != null) {
                 MainResponse<ResponseType> mainResponse = new MainResponse<>();
@@ -40,15 +40,23 @@ public class ApiResponse<ResponseType> implements Callback<ResponseType> {
         } else {
             // Parse Retrofit Error body
             if (response.errorBody() != null) {
-                ErrorResponse errorResponse = new Gson().fromJson(response.errorBody().charStream(), ErrorResponse.class);
+                ErrorResponse errorResponse = null;
                 MainResponse<ResponseType> mainResponse = new MainResponse<>();
-                if (errorResponse != null) {
-                    if (errorResponse.getMessage() != null){
-                        mainResponse.setMessage(errorResponse.getMessage());
+
+                try {
+                    errorResponse = new Gson().fromJson(response.errorBody().charStream(), ErrorResponse.class);
+                    mainResponse = new MainResponse<>();
+                    if (errorResponse != null) {
+                        if (errorResponse.getDetail() != null) {
+                            mainResponse.setMessage(errorResponse.getDetail());
+                        }
+                    } else {
+                        mainResponse.setMessage("Connection Error");
                     }
-                } else {
-                    mainResponse.setMessage("Connection Error");
+                } catch (IllegalStateException | JsonSyntaxException exception) {
+                    Log.d("JsonSyntaxException", exception.getMessage());
                 }
+
 
                 if (errorResponse != null) {
                     mainResponse.setStatusCode(errorResponse.getStatus());

@@ -143,28 +143,4 @@ public class TraineeRepository {
         return inBodies;
     }
 
-    // ************ Enrollment ************//
-
-    public MutableLiveData<Boolean> enrollTraineeToProgram(long onGoingWorkoutPlanId, long traineeId) {
-        MutableLiveData<Boolean> isEnrolled = new MutableLiveData<>();
-        Call<Void> call = traineeClient.enrollTraineeToOnGoingWorkoutPlan(onGoingWorkoutPlanId, traineeId);
-        call.enqueue(new Callback<Void>() {
-            @Override
-            public void onResponse(@NotNull Call<Void> call, @NotNull Response<Void> response) {
-                if (response.code() == 201) {
-                    isEnrolled.setValue(true);
-                } else {
-                    isEnrolled.setValue(false);
-                }
-            }
-
-            @Override
-            public void onFailure(@NotNull Call<Void> call, @NotNull Throwable t) {
-                isEnrolled.setValue(false);
-
-            }
-        });
-        return isEnrolled;
-    }
-
 }

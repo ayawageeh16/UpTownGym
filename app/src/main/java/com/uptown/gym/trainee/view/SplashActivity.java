@@ -32,8 +32,6 @@ import static com.google.android.play.core.install.model.AppUpdateType.IMMEDIATE
 public class SplashActivity extends AppCompatActivity {
     private static final int SPLASH_TIME_OUT = 2500;
     private static final String TAG = "Creating channel ->> ";
-    private AppUpdateManager appUpdateManager;
-    private static final int MY_REQUEST_CODE = 50;
 
 
     @Override
@@ -41,87 +39,17 @@ public class SplashActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
 
-        appUpdateManager = AppUpdateManagerFactory.create(this);
-
-        if (BuildConfig.DEBUG) {
-            FirebaseCrashlytics.getInstance().setCrashlyticsCollectionEnabled(false);
+        if (!BuildConfig.DEBUG) {
+            FirebaseCrashlytics.getInstance().setCrashlyticsCollectionEnabled(true);
         }
 
-//        // Handler for Splash Image Display
-        new Handler().postDelayed(this::checkForUpdates, SPLASH_TIME_OUT);
+        startTheApp();
     }
 
     @Override
     protected void onResume() {
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-        resumeUpdateIfNeeded();
         super.onResume();
-    }
-
-
-    @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == MY_REQUEST_CODE) {
-            if (resultCode == RESULT_CANCELED) {
-                log("Update flow RESULT_CANCELED " + resultCode);
-                // If the update is cancelled or fails,
-                // you can request to start the update again.
-            } else if (resultCode == ActivityResult.RESULT_IN_APP_UPDATE_FAILED) {
-                log("Update flow RESULT_IN_APP_UPDATE_FAILED " + resultCode);
-            } else if (requestCode != RESULT_OK) {
-                log("Update flow Failed " + resultCode);
-
-            }
-        }
-    }
-
-    private void checkForUpdates() {
-        AppUpdateManager appUpdateManager = AppUpdateManagerFactory.create(this);
-        Task<AppUpdateInfo> appUpdateInfoTask = appUpdateManager.getAppUpdateInfo();
-
-        // Checks that the platform will allow the IMMEDIATE update.
-        appUpdateInfoTask.addOnSuccessListener(appUpdateInfo -> {
-            if (appUpdateInfo.updateAvailability() == UpdateAvailability.UPDATE_AVAILABLE) {
-                startUpdateFlow(appUpdateInfo);
-            } else {
-                startTheApp();
-            }
-        }).addOnFailureListener(e -> {
-                    Log.e("appUpdateInfo", "onFailure: onResume" + e.getMessage());
-                    startTheApp();
-                }
-        );
-    }
-
-    private void startUpdateFlow(AppUpdateInfo appUpdateInfo) {
-        try {
-            appUpdateManager.startUpdateFlowForResult(
-                    appUpdateInfo,
-                    AppUpdateType.IMMEDIATE,
-                    this,
-                    MY_REQUEST_CODE);
-        } catch (IntentSender.SendIntentException e) {
-            e.printStackTrace();
-        }
-    }
-
-    private void resumeUpdateIfNeeded() {
-        appUpdateManager.getAppUpdateInfo().addOnSuccessListener(appUpdateInfo -> {
-            if (appUpdateInfo.updateAvailability() == UpdateAvailability.DEVELOPER_TRIGGERED_UPDATE_IN_PROGRESS) {
-                try {
-                    // If an in-app update is already running, resume the update.
-                    appUpdateManager.startUpdateFlowForResult(
-                            appUpdateInfo,
-                            IMMEDIATE,
-                            this,
-                            MY_REQUEST_CODE);
-
-                } catch (IntentSender.SendIntentException e) {
-                    e.printStackTrace();
-                }
-            }
-        });
     }
 
     private void startTheApp() {

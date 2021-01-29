@@ -11,7 +11,7 @@ android {
         applicationId "com.uptown.gym.trainee"
         minSdkVersion 16
         targetSdkVersion 29
-        versionCode 3
+        versionCode 5
         versionName "1.0.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables.useSupportLibrary = true
@@ -34,12 +34,12 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
 
-            buildConfigField "String", "BASE_URL", "\"https://uptown-gym.herokuapp.com/\""
+            buildConfigField "String", "BASE_URL", "\"https://workout-plans.herokuapp.com/\""
         }
 
         debug {
             //buildConfigField "String", "BASE_URL", "\"https://uptown-gym-dev.herokuapp.com/\""
-            buildConfigField "String", "BASE_URL", "\"https://uptown-gym.herokuapp.com/\""
+            buildConfigField "String", "BASE_URL", "\"https://workout-plans.herokuapp.com/\""
         }
     }
 

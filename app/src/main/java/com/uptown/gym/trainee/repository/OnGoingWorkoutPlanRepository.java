@@ -2,7 +2,6 @@ package com.uptown.gym.trainee.repository;
 
 import com.uptown.gym.trainee.model.base.MainResponse;
 import com.uptown.gym.trainee.model.ongoingworkoutplan.OnGoingWorkoutPlan;
-import com.uptown.gym.trainee.model.ongoingworkoutplan.OnGoingWorkoutPlanDayTime;
 import com.uptown.gym.trainee.model.ongoingworkoutplan.OnGoingWorkoutPlanDayTimesResponse;
 import com.uptown.gym.trainee.model.ongoingworkoutplan.OnGoingWorkoutPlansResponse;
 import com.uptown.gym.trainee.retrofit.OnGoingWorkoutPlanClient;
@@ -10,12 +9,7 @@ import com.uptown.gym.trainee.retrofit.utils.ApiResponse;
 import com.uptown.gym.trainee.retrofit.utils.ApiResponseListener;
 import com.uptown.gym.trainee.retrofit.utils.RetrofitClient;
 
-import org.jetbrains.annotations.NotNull;
-
 import androidx.lifecycle.MutableLiveData;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
 public class OnGoingWorkoutPlanRepository {
 
@@ -34,48 +28,9 @@ public class OnGoingWorkoutPlanRepository {
         }
     }
 
-
     public MutableLiveData<MainResponse<OnGoingWorkoutPlansResponse>> findAllOnGoingWorkoutPlansByGender(long userId) {
         MutableLiveData<MainResponse<OnGoingWorkoutPlansResponse>> allOnGoingWorkoutPlans = new MutableLiveData<>();
-        onGoingWorkoutPlanClient.findAllOnGoingWorkoutPlansByGender(userId).enqueue(new ApiResponse(new ApiResponseListener<MainResponse<OnGoingWorkoutPlansResponse>>() {
-            @Override
-            public void onSuccess(MainResponse<OnGoingWorkoutPlansResponse> response) {
-                allOnGoingWorkoutPlans.postValue(response);
-            }
-
-            @Override
-            public void onFailure(String message) {
-                MainResponse<OnGoingWorkoutPlansResponse> mainResponse = new MainResponse<>();
-                mainResponse.setMessage(message);
-                mainResponse.setResponse(null);
-                allOnGoingWorkoutPlans.postValue(mainResponse);
-            }
-        }));
-        return allOnGoingWorkoutPlans;
-    }
-
-    public MutableLiveData<MainResponse<OnGoingWorkoutPlansResponse>> findAllOnGoingWorkoutPlansByTarget(String target) {
-        MutableLiveData<MainResponse<OnGoingWorkoutPlansResponse>> allOnGoingWorkoutPlans = new MutableLiveData<>();
-        onGoingWorkoutPlanClient.findAllOnGoingWorkoutPlansByTarget(target).enqueue(new ApiResponse(new ApiResponseListener<MainResponse<OnGoingWorkoutPlansResponse>>() {
-            @Override
-            public void onSuccess(MainResponse<OnGoingWorkoutPlansResponse> response) {
-                allOnGoingWorkoutPlans.postValue(response);
-            }
-
-            @Override
-            public void onFailure(String message) {
-                MainResponse<OnGoingWorkoutPlansResponse> mainResponse = new MainResponse<>();
-                mainResponse.setMessage(message);
-                mainResponse.setResponse(null);
-                allOnGoingWorkoutPlans.postValue(mainResponse);
-            }
-        }));
-        return allOnGoingWorkoutPlans;
-    }
-
-    public MutableLiveData<MainResponse<OnGoingWorkoutPlansResponse>> findAllOnGoingWorkoutPlansByGenderAndTarget(String gender, String target) {
-        MutableLiveData<MainResponse<OnGoingWorkoutPlansResponse>> allOnGoingWorkoutPlans = new MutableLiveData<>();
-        onGoingWorkoutPlanClient.findAllOnGoingWorkoutPlansByGenderAndTarget(gender, target).enqueue(new ApiResponse(new ApiResponseListener<MainResponse<OnGoingWorkoutPlansResponse>>() {
+        onGoingWorkoutPlanClient.findAllOnGoingWorkoutPlans(userId).enqueue(new ApiResponse(new ApiResponseListener<MainResponse<OnGoingWorkoutPlansResponse>>() {
             @Override
             public void onSuccess(MainResponse<OnGoingWorkoutPlansResponse> response) {
                 allOnGoingWorkoutPlans.postValue(response);

@@ -10,16 +10,17 @@ import lombok.Setter;
 @Setter
 public class ErrorResponse {
 
-    @SerializedName("timestamp")
+
+    @SerializedName("type")
     @Expose
-    private String timestamp;
+    private String type;
+    @SerializedName("title")
+    @Expose
+    private String title;
     @SerializedName("status")
     @Expose
     private Integer status;
-    @SerializedName("error")
+    @SerializedName("detail")
     @Expose
-    private String error;
-    @SerializedName("message")
-    @Expose
-    private String message = null;
+    private String detail;
 }
