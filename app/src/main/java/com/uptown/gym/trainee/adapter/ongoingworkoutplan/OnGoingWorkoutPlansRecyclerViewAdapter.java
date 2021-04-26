@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.uptown.gym.trainee.R;
+import com.uptown.gym.trainee.databinding.ItemLoadingBinding;
 import com.uptown.gym.trainee.databinding.ItemOngoingWorkoutPlanBinding;
 import com.uptown.gym.trainee.listener.OnGoingWorkoutPlanListener;
 import com.uptown.gym.trainee.model.ongoingworkoutplan.OnGoingWorkoutPlan;
@@ -51,6 +52,11 @@ public class OnGoingWorkoutPlansRecyclerViewAdapter extends RecyclerView.Adapter
                 parent,
                 false);
         return new ActiveProgramsViewHolder(itemOngoingWorkoutPlanBinding);
+
+    }
+
+    public void addLoading() {
+        notifyItemInserted(onGoingWorkoutPlans.size() - 1);
     }
 
     @Override
